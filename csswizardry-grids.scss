@@ -373,7 +373,7 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
      * Hide
      */
     @if $hide {
-        #{$prefix}hide         { display: none }
+        #{$prefix}hide         { display: none!important }
     }
 
     /**
