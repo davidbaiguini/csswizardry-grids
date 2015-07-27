@@ -81,6 +81,12 @@ $print:                false !default;
 
 
 /**
+ * If you want to be able to use the grid to hide elements
+ */
+$hide:                false !default;
+
+
+/**
  * Is this build mobile first? Setting to ‘true’ means that all grids will be
  * 100% width if you do not apply a more specific class to them.
  */
@@ -362,6 +368,13 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
  */
 @mixin device-type($namespace:"") {
     $prefix: $class-type + $namespace;
+
+    /**
+     * Hide
+     */
+    @if $hide {
+        #{$prefix}hide         { display: none }
+    }
 
     /**
      * Whole
