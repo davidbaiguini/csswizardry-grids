@@ -75,6 +75,12 @@ $responsive:            true !default;
 
 
 /**
+ * If you want to use print as mediaquery
+ */
+$print:                false !default;
+
+
+/**
  * Is this build mobile first? Setting to ‘true’ means that all grids will be
  * 100% width if you do not apply a more specific class to them.
  */
@@ -466,7 +472,16 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
 }
 
 
+/**
+ * Our grid for print, if we have enabled it
+ */
+@if $print {
 
+    @media print  {
+        @include device-type('print--');
+    }
+
+}
 
 
 /*------------------------------------*\
